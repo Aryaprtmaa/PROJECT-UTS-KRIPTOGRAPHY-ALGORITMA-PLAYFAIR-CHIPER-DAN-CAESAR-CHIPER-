@@ -1,0 +1,3 @@
+function setSample(){document.querySelector('[name=text]').value='HELLO WORLD';document.querySelector('[name=key]').value='CRYPTO';}
+function copyResult(){var r=document.getElementById('resultBox');r.select();document.execCommand('copy');alert('Hasil disalin!');}
+function playSteps(){const timeline=document.getElementById('timeline');timeline.innerHTML='';let i=0;function showNext(){if(i>=steps.length)return;const s=steps[i];const div=document.createElement('div');div.className='timeline-item timeline-step';div.innerHTML=`<b>Langkah ${i+1}</b>: Pair <span class='text-info'>${s.pair}</span> → ${s.rule} → <span class='text-success'>${s.result}</span>`;timeline.appendChild(div);setTimeout(()=>{div.classList.add('active');},50);i++;setTimeout(showNext,800);}showNext();}
